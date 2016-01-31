@@ -10,7 +10,7 @@ function gal2sgal(l,b)
     Rx=[-0.7357425748043749,-0.07455377836523475,0.6731453021092076]
     Ry=[0.6772612964138943,-0.08099147130697638,0.7312711658169645]
     Rz=[0,0.9939225903997749,0.11008126222478193]
-    R=reshape([Rx,Ry,Rz],3,3);
+    R=reshape([Rx;Ry;Rz],3,3);
     SGL=float(l);SGB=float(b)
     l=deg2rad(l);b=deg2rad(b);
     for i=1:length(l)
@@ -41,7 +41,7 @@ function sgal2gal(SGL,SGB)
     Rx=[-0.7357425748043749,-0.07455377836523475,0.6731453021092076]
     Ry=[0.6772612964138943,-0.08099147130697638,0.7312711658169645]
     Rz=[0,0.9939225903997749,0.11008126222478193]
-    R=inv(reshape([Rx,Ry,Rz],3,3))
+    R=inv(reshape([Rx;Ry;Rz],3,3))
     l=float(SGL);b=float(SGB)
     L=deg2rad(SGL);B=deg2rad(SGB);
     for i=1:length(SGL)
